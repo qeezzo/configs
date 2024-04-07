@@ -1,0 +1,60 @@
+set {
+  # General
+  $mod Mod4
+  $left h
+  $down j
+  $up k
+  $right l
+
+  # Modes 
+  $layout_mode "(d) Stacking | (t) Tabbed | (s) Split | (v) Vertical | (h) Horizontal"
+  $power_mode  "(F2) Screen Off | (F3) Lock | (F4) Suspend | (F5) Reboot | (F6) Power Off"
+
+  # Preferences
+  $font Hack Nerd Font Mono 16
+  $theme dark
+
+  # Apps
+  $term foot
+  $browser firefox
+  $menu fuzzel --log-level=none | xargs swaymsg exec --
+  $screenshot weye
+
+  # Scripts
+  $screen_off ~/.config/.local/bin/screen_off.sh
+  $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+}
+
+include input.sway
+include binds.sway
+include modes.sway
+include theme.sway
+include bar.sway
+
+output * bg ~/Images/wallpaper/dark_cat.jpg fit
+
+exec_always {
+  # link file to wob input; wob - wayland overlay bar
+  # rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob/backlight.ini & disown
+  rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob & disown
+}
+
+exec {
+  # gammastep - screen's temperature
+  gammastep -PO 4200
+  wl-paste --watch cliphist store
+  diskie &
+}
+
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+floating_modifier $mod normal
+
+# For windows
+for_window [app_id="float"] floating enable
+for_window [title="float"] floating enable
+for_window [app_id="io.crow_translate.CrowTranslate"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+
+include /etc/sway/config.d/*

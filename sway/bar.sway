@@ -1,0 +1,29 @@
+bar {
+  # colors {
+  #   # class            border    backgr.   text
+  #   background         #282828AA
+  #   statusline         #E1F5A9AA
+  #   focused_separator  #6A0888AA
+  #   focused_statusline #98971AAA
+  #   focused_workspace  #B16286AA #B8BB26AA #FFFFFF
+  #   active_workspace   #333333AA #331A00AA #FFFFFF
+  #   inactive_workspace #333333AA #222222AA #888888
+  #   urgent_workspace   #2f343aAA #EB4D4BAA #FFFFFF
+  #   binding_mode       #2f343aAA #FF0000AA #FFFFFF
+  # }
+
+  # font $font
+  # pango_markup enabled
+  # position top
+  # status_command i3status-rs --never-pause # 2> ~/.local/log/i3status.log # env RUST_BACKTRACE=full
+  # status_command while date +'%d-%m-%Y %X'; do sleep 1; done
+  swaybar_command waybar
+  # workspace_buttons yes
+  # tray {
+  #   icon_theme $icon_theme
+  #   bindsym {
+  #     # The middle button over a bar run nmtui
+  #     button2 exec iwdgtk
+  #   }
+  # }
+}
