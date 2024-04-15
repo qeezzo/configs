@@ -36,14 +36,15 @@ output * bg ~/Images/wallpaper/dark_cat.jpg fit
 exec_always {
   # link file to wob input; wob - wayland overlay bar
   # rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob/backlight.ini & disown
-  rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob & disown
 }
 
 exec {
   # gammastep - screen's temperature
   gammastep -PO 4200
   wl-paste --watch cliphist store
-  diskie &
+  # diskie &
+  nm-applet &
+  rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob & disown
 }
 
 
@@ -56,5 +57,7 @@ for_window [app_id="float"] floating enable
 for_window [title="float"] floating enable
 for_window [app_id="io.crow_translate.CrowTranslate"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [title="Avalonia DevTools"] floating enable
 
 include /etc/sway/config.d/*

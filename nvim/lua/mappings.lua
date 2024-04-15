@@ -19,9 +19,6 @@ vim.api.nvim_create_autocmd({ "BufNew", "BufAdd", "BufEnter" }, {
 	group = Formatting,
 })
 
--- format
-vim.keymap.set("n", "<leader>fm", ":Format<cr>")
-
 local CompileRun = vim.api.nvim_create_augroup("CompileRun", { clear = false })
 
 -- compile
