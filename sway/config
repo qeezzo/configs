@@ -31,7 +31,8 @@ include modes.sway
 include theme.sway
 include bar.sway
 
-output * bg ~/Images/wallpaper/dark_cat.jpg fit
+# different for host
+include output.sway
 
 exec_always {
   # link file to wob input; wob - wayland overlay bar
