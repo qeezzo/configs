@@ -4,7 +4,7 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0);
+    background-color: #000;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -61,6 +61,10 @@ button:hover {
     /* border-bottom: 3px solid #ffffff; */
 }
 
+#custom-power,
+#custom-quit,
+#custom-suspend,
+#custom-reboot,
 #clock,
 #battery,
 #cpu,
@@ -240,4 +244,18 @@ label:focus {
 
 #scratchpad.empty {
 	color: transparent;
+}
+
+#custom-power {
+  margin-right: 10px;
+  color: #db395f;
+}
+#custom-suspend {
+  color: #df5373;
+}
+#custom-reboot {
+  color: #e36885;
+}
+#custom-quit {
+  color: #e9869d;
 }
