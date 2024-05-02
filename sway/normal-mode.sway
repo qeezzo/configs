@@ -1,0 +1,48 @@
+
+mode "normal" {
+  bindsym --to-code {
+    # exit
+    Escape mode "default"
+
+
+    # --- movement ---
+    h focus left
+    j focus up
+    k focus down
+    l focus right
+
+    Shift+h move left
+    Shift+j move up
+    Shift+k move down
+    Shift+l move right
+
+    Control+h workspace prev
+    Control+l workspace next
+
+    p focus parent
+
+    $mod+slash exec ./focus_window.sh
+
+    1 workspace number 1
+    2 workspace number 2
+    3 workspace number 3
+    4 workspace number 4
+    5 workspace number 5
+    6 workspace number 6
+    7 workspace number 7
+    8 workspace number 8
+    9 workspace number 9
+    0 workspace number 10
+
+    # --- window management --- 
+    d kill
+    q kill
+
+    Shift+f fullscreen
+
+    
+    # --- apps ---
+    # terminal
+    $mod+Semicolon exec fuzzel --config ~/.config/fuzzel/vim-cmd.ini
+  }
+}

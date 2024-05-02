@@ -79,6 +79,7 @@
     },
     "sway/workspaces": {
         "format": "{name}",
+        //
         //"format-window-separator": " | ",
         //"window-rewrite-default": "{app_id}",
         // "window-format": "<span color='#e0e0e0'>{name}</span>",
@@ -89,12 +90,12 @@
         "window-rewrite-default": "{app_id}",
     },
     "sway/scratchpad": {
-        "format": "{icon} {count}",
+        "format": "󰖲 {count}",
         "show-empty": false,
-        "format-icons": {
-            "one": "󰖯",
-            "many": "󰖲"
-        },
+        //"format-icons": {
+        //    "one": "󰖯",
+        //    "many": "󰖲"
+        //},
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },

@@ -10,16 +10,16 @@ bindsym --to-code {
     # Start a terminal
     $mod+Return exec $term
 
-    # Rename container
-    $mod+Shift+r rename workspace
+    # rename container
+    $mod+Shift+r exec swaymsg rename workspace to $($input)
 
-    # Kill focused window
+    # kill focused window
     $mod+q kill
 
-    # Start your launcher
+    # menu launcher
     $mod+d exec $menu
 
-    # Start nnn, file explorer
+    # ranger, file explorer
     $mod+e exec $term ranger
 
     # Reload the configuration file
@@ -48,6 +48,13 @@ bindsym --to-code {
     $mod+Shift+$down move down
     $mod+Shift+$up move up
     $mod+Shift+$right move right
+
+    # move workspace to outputs
+    $mod+Shift+Control+h move workspace to output left
+    $mod+Shift+Control+j move workspace to output down
+    $mod+Shift+Control+k move workspace to output up
+    $mod+Shift+Control+l move workspace to output right
+
     # Ditto, with arrow keys
     $mod+Shift+Left move left
     $mod+Shift+Down move down
@@ -96,6 +103,11 @@ bindsym --to-code {
     # Move focus to the parent container
     $mod+a focus parent
 
+    # Player control, spotify
+    XF86AudioNext         exec playerctl --player=spotify next
+    XF86AudioPrev         exec playerctl --player=spotify previous
+    XF86AudioPlay         exec playerctl --player=spotify play-pause
+
     # Backlight, light
     XF86MonBrightnessUp   exec light -A 5 && echo "$(light -G)/1" | bc > $WOBSOCK
     XF86MonBrightnessDown exec light -U 5 && echo "$(light -G)/1" | bc > $WOBSOCK
@@ -107,18 +119,26 @@ bindsym --to-code {
 
     # PowerOff, Power menu
     XF86PowerOff          exec ~/.config/.local/bin/power_menu.sh
+    $mod+F2               exec ~/.config/.local/bin/power_menu.sh
 
-    # ScreenShot
-    Print exec grimshot copy area
+    # screenoff
+    $mod+F1       exec ~/.config/.local/bin/screen_off.sh
+
+    # screenshot, timer sreenshot
+    Print         exec grimshot save anything - | swappy -f - -o - | wl-copy
+    $mod+p        exec grimshot save anything - | swappy -f - -o - | wl-copy
+    Shift+Print   exec grimshot --cursor --wait 3 save anything - | swappy -f - -o - | wl-copy
+    $mod+Shift+p  exec grimshot --cursor --wait 3 save anything - | swappy -f - -o - | wl-copy
+
 
     # Crow translate
-    # $mod+e exec qdbus io.crow_translate.CrowTranslate /io/crow_translate/CrowTranslate/MainWindow translateSelection
-    $mod+t exec crow
+    $mod+t exec qdbus io.crow_translate.CrowTranslate /io/crow_translate/CrowTranslate/MainWindow translateSelection
 
 
     # Modes
     $mod+r mode "resize"
     $mod+s mode $layout_mode
+    $mod+n mode "normal"
     # $mod+F2 mode $power_mode
 }
 

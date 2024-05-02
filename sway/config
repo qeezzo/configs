@@ -18,7 +18,7 @@ set {
   $term foot
   $browser firefox
   $menu fuzzel --log-level=none | xargs swaymsg exec --
-  $screenshot weye
+  $input fuzzel --log-level=none --config ~/.config/fuzzel/vim-cmd.ini --dmenu --prompt "(num:name)> "
 
   # Scripts
   $screen_off ~/.config/.local/bin/screen_off.sh
@@ -30,6 +30,7 @@ include binds.sway
 include modes.sway
 include theme.sway
 include bar.sway
+include normal-mode.sway
 
 # different for host
 include output.sway
@@ -37,6 +38,7 @@ include output.sway
 exec_always {
   # link file to wob input; wob - wayland overlay bar
   # rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob/backlight.ini & disown
+  i3-focus-last server
 }
 
 exec {

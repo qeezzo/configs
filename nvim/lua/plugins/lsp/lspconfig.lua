@@ -146,5 +146,11 @@ return {
 			},
 			cmd = { "sql-language-server", "up", "--method", "stdio" },
 		})
+
+		lspconfig["cssls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 	end,
 }
