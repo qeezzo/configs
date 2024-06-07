@@ -1,0 +1,24 @@
+#custom-power {
+  font-size: 32px;
+  background: #db395f;
+  color: black;
+  padding: 0 10px;
+}
+#custom-suspend {
+  font-size: 32px;
+  background: #db395f;
+  color: black;
+  padding: 0 10px;
+}
+#custom-reboot {
+  font-size: 32px;
+  background: #db395f;
+  color: black;
+  padding: 0 10px;
+}
+#custom-quit {
+  font-size: 32px;
+  background: #db395f;
+  color: black;
+  padding: 0 10px;
+}

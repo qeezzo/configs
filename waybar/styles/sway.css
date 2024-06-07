@@ -1,0 +1,26 @@
+/* https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#style */
+
+#mode {
+    background-color: #6033ff;
+}
+
+#workspaces button {
+  color: #fff;
+  padding: 0 5px;
+  background-color: black;
+  box-shadow: inset 0 -3px transparent;
+}
+
+#workspaces button.focused {
+  background-color: #6033ff;
+}
+
+#workspaces button:hover {
+  box-shadow: inset 0 -3px #fff;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+/* vim: set sw=2 ts=2 sts=2 et: */

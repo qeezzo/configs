@@ -1,0 +1,106 @@
+{ // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+    "sway/window": {
+        "format": "<span style='italic'>{app_id}</span>",
+        "icon": true
+    },
+    "sway/scratchpad": {
+        "format": "󰖲 {count}",
+        "show-empty": true,
+        // "format-icons": {
+        //     "one": "󰖯",
+        //     "many": "󰖲"
+        // },
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"warp-on-scroll": false,
+		"format": "{icon} {windows}",
+        "window-format": "{name}",
+		"format-window-separator": " ",
+		"format-icons": {
+			"firefox": "🌎",
+			"browser": "🌎",
+			"social": "💬",
+			"telegram": "💬",
+			"1": "󰬺",
+			"2": "󰬻",
+			"3": "󰬼",
+			"4": "󰬽",
+			"5": "󰬾",
+			"6": "󰬿",
+			"7": "󰭀",
+			"8": "󰭁",
+			"9": "󰭂",
+			"10": "oops"
+			// "urgent": "",
+			// "focused": "",
+			// "default": ""
+		},
+		// "window-rewrite-default": "",
+		"window-rewrite-default": "",// "",
+		"window-rewrite": {
+			"title<.*youtube.*>": "",
+			"title<.*arch.*>": "󰣇",
+			"title<.*google.*>": "",
+			"title<.*Icônes.*>": "",
+			"title<.*Nerd Fonts.*>": "",
+			"title<.*Simple Icons.*>": "󱌝",
+			"title<.*github.*>": "",
+			"title<.*reddit.*>": "",
+			"title<.*r/.*>": "",
+			"title<.*4chan.*>": "󰠖",
+			"title<.*tmux.*>": "",
+			"class<google-chrome>": "",
+			"class<firefox>": "",
+			"class<kitty>": "",
+			"class<foot>": "",
+			"class<crow>": "",
+			"class<vlc>": "󰕼",
+            "class<spotify>": "",
+			"class<discord>": "",
+			"class<qt5ct>": "",
+			"class<qt6ct>": "",
+			"class<obsidian>": "󰣏",
+			"class<nwg-look>": "",
+			"class<nwg-displays>": "󰨇",
+			"class<pavucontrol>": "",
+			"class<tv.plex.plexmediaplayer>": "󰚺",
+			"class<.*transmissionbt.*>": "󰀂",
+			"class<krita>": "",
+			"class<blender>": "󰂫",
+			"class<bleachbit>": "󰃢",
+			"class<thunderbird>": "󱗆",
+			"class<blueman-manager>": "",
+			"class<nm-connection-editor>": "󰤨",
+			// kde
+			"class<org.kde.ark>": "",
+			"class<org.kde.kid3>": "",
+			"class<org.kde.kcalc>": "󰃬",
+			"class<org.kde.dolphin>": "",
+			// libreoffice
+			"class<libreoffice-calc>": "󰧷",
+			"class<libreoffice-math>": "󰍘",
+			"class<libreoffice-draw>": "󰽉",
+			"class<libreoffice-writer>": "󰈙",
+			"class<libreoffice-impress>": "󰐩",
+			"class<libreoffice-startcenter>": "󰈙",
+			// gnome
+			"class<org.gnome.baobab>": "󰋊",
+			"class<gnome-disks>": "󰋊",
+			// font
+			"class<font-viewer>": "",
+			"class<font-manager>": "",
+			// Third Party
+			"class<Gimp.*>": "",
+			"class<Insomnia>": "󰛶",
+			"class<TablePlus>": "󰟆",
+			"class<Docker Desktop>": "󰡨",
+			"class<Angry IP Scanner>": "󰩠",
+			"class<net.nokyan.Resources>": "󰭅",
+			"class<com.obsproject.Studio>": "󰑋"
+		}
+	},
+}

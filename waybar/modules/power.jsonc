@@ -1,0 +1,23 @@
+{
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "swaymsg exit"
+    },
+    "custom/suspend": {
+        // "format": "󰍁",
+        "format": "󰒲",
+        "tooltip": false,
+        "on-click": "zenity --question --text 'Suspend?' --title Confirmation && systemctl suspend"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "zenity --question --text 'Reboot?' --title Confirmation && systemctl reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "zenity --question --text 'Power off?' --title Confirmation && systemctl poweroff"
+    }
+}

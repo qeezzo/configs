@@ -1,0 +1,71 @@
+{
+	"include": [
+		"~/.config/waybar/modules/index.jsonc"
+	],
+	// "layer": "top", // Waybar at top layer
+	// "position": "bottom", // Waybar position (top|bottom|left|right)
+	"height": 30, // Waybar height (to be removed for auto height)
+	"spacing": 5, // Gaps between modules (4px)
+	// Choose the order of the modules
+	"modules-left": [
+		"sway/workspaces",
+		"sway/window",
+        "sway/mode"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"cpu",
+		// "power-profiles-daemon",
+		"memory",
+		"disk",
+		"temperature",
+		"group/g-pulseaudio",
+		"group/g-backlight",
+		"idle_inhibitor",
+		"custom/updates",
+		"privacy",
+		"battery",
+		"tray",
+        "group/gpower"
+	],
+	"group/g-backlight": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": false
+		},
+		"modules": [
+			"backlight",
+			"backlight/slider"
+		]
+	},
+	"group/g-pulseaudio": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": false
+		},
+		"modules": [
+			"pulseaudio",
+			"pulseaudio/slider"
+		]
+	},
+    "group/gpower": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "power-group",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "custom/power",
+            "custom/quit",
+            "custom/reboot",
+            "custom/suspend"
+        ]
+    }
+}

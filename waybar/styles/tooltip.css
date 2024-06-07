@@ -1,0 +1,11 @@
+tooltip {
+  border-radius: 10px;
+  background: alpha(@base, 0.8);
+  color: @text;
+  border: 1px solid @lavender;
+}
+
+tooltip label {
+  color: @text;
+  padding: 10px;
+}

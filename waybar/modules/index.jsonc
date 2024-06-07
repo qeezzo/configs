@@ -1,0 +1,11 @@
+{
+	"include": [
+		"~/.config/waybar/modules/sway.jsonc",
+		"~/.config/waybar/modules/clock.jsonc",
+		"~/.config/waybar/modules/power.jsonc",
+		"~/.config/waybar/modules/custom.jsonc",
+		"~/.config/waybar/modules/system.jsonc",
+		"~/.config/waybar/modules/backlight.jsonc",
+		"~/.config/waybar/modules/pulseaudio.jsonc"
+	]
+}
