@@ -1,0 +1,12 @@
+.lazy-lock.json
+/sway/output.sway
+!/sway
+!/nvim
+!/zsh
+!/wob
+!/.local
+!/waybar
+!/.git
+*
+!.gitignore
+!user-dirs.dirs
