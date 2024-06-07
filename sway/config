@@ -1,28 +1,30 @@
 set {
-  # General
-  $mod Mod4
-  $left h
-  $down j
-  $up k
-  $right l
+# General
+    $mod Mod4
+    $left h
+    $down j
+    $up k
+    $right l
 
-  # Modes 
-  $layout_mode "(d) Stacking | (t) Tabbed | (s) Split | (v) Vertical | (h) Horizontal"
-  $power_mode  "(F2) Screen Off | (F3) Lock | (F4) Suspend | (F5) Reboot | (F6) Power Off"
+# Modes 
+    $layout_mode "(d) Stacking | (t) Tabbed | (s) Split | (v) Vertical | (h) Horizontal"
+    $power_mode  "(F2) Screen Off | (F3) Lock | (F4) Suspend | (F5) Reboot | (F6) Power Off"
 
-  # Preferences
-  $font Hack Nerd Font Mono 16
-  $theme dark
+# Preferences
+    $font Hack Nerd Font Mono 16
+    $theme dark
 
-  # Apps
-  $term foot
-  $browser firefox
-  $menu fuzzel --log-level=none | xargs swaymsg exec --
-  $input fuzzel --log-level=none --config ~/.config/fuzzel/vim-cmd.ini --dmenu --prompt "(num:name)> "
+# Apps
+    $term foot
+    $browser firefox
+    $menu fuzzel --list-executables-in-path --log-level=none | xargs swaymsg exec --
+    $input fuzzel --log-level=none --config ~/.config/fuzzel/vim-cmd.ini --dmenu --prompt "(num:name)> "
 
-  # Scripts
-  $screen_off ~/.config/.local/bin/screen_off.sh
-  $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+# Scripts
+    $screen_off ~/.config/.local/bin/screen_off.sh
+    $lock ~/.config/.local/bin/lock.sh
+    $idle ~/.config/.local/bin/idle.sh
+    $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 }
 
 include input.sway
@@ -36,18 +38,29 @@ include normal-mode.sway
 include output.sway
 
 exec_always {
-  # link file to wob input; wob - wayland overlay bar
-  # rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob/backlight.ini & disown
-  i3-focus-last server
+# link file to wob input; wob - wayland overlay bar
+# rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob/backlight.ini & disown
+    i3-focus-last server
+    rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob & disown
+
+    # ~/.config/.local/bin/idle.sh > /tmp/log & disown
+
+    gsettings set org.gnome.desktop.interface gtk-theme 'Layan-Dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+    gsettings set org.gnome.desktop.interface cursor-theme 'oreo_spark_red_cursors'
+    gsettings set org.gnome.desktop.interface cursor-size '36'
+}
+
+seat {
+    seat0 xcursor_theme oreo_spark_red_cursors 36
 }
 
 exec {
-  # gammastep - screen's temperature
-  gammastep -PO 4200
-  wl-paste --watch cliphist store
-  # diskie &
-  nm-applet &
-  rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob & disown
+# gammastep - screen's temperature
+    gammastep -PO 4200
+    wl-paste --watch cliphist store
+    diskie &
+    nm-applet &
 }
 
 
@@ -62,5 +75,7 @@ for_window [app_id="io.crow_translate.CrowTranslate"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [title="Avalonia DevTools"] floating enable
+for_window [app_id="thunar"] floating enable
+for_window [class="Lxappearance"] floating enable
 
 include /etc/sway/config.d/*

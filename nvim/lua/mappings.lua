@@ -12,9 +12,8 @@ local Formatting = vim.api.nvim_create_augroup("Formatting", { clear = false })
 vim.api.nvim_create_autocmd({ "BufNew", "BufAdd", "BufEnter" }, {
 	pattern = { "*.cpp" },
 	callback = function()
-		vim.opt_local.tabstop = 2
-		vim.opt_local.softtabstop = 2
-		vim.opt_local.shiftwidth = 2
+		vim.opt_local.tabstop = 4
+		vim.opt_local.softtabstop = 4 vim.opt_local.shiftwidth = 4
 	end,
 	group = Formatting,
 })
@@ -113,6 +112,17 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	callback = function()
 		vim.keymap.set("n", "<leader><F5>", function()
 			vim.cmd("bo sp | term java %< " .. vim.b.args)
+		end)
+	end,
+	group = CompileRun,
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "python" },
+	callback = function()
+		vim.b.args = ""
+		vim.keymap.set("n", "<leader><F5>", function()
+			vim.cmd("bo sp | term python % " .. vim.b.args)
 		end)
 	end,
 	group = CompileRun,

@@ -14,6 +14,7 @@ return {
         xml = { "prettier" },
         lua = { "stylua" },
 
+        cs = { "clang-format" },
         cpp = { "clang-format" },
         h = { "clang-format" },
         hpp = { "clang-format" },

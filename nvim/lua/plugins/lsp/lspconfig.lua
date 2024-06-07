@@ -134,22 +134,17 @@ return {
 				sqlLanguageServer = {
 					connections = {
 						{
-              adapter = 'mysql',
-              host = '[::]',
-              user = 'renat',
-              password = 'renatus',
-              port = 3306,
-              database = 'bank',
+						      adapter = 'mysql',
+						      host = '[::]',
+						      user = 'renat',
+						      password = 'renatus',
+						      port = 3306,
+						      database = 'bank',
 						},
 					},
 				},
 			},
 			cmd = { "sql-language-server", "up", "--method", "stdio" },
-		})
-
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
 		})
 
 	end,
