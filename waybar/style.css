@@ -71,7 +71,8 @@ label {
 }
 
 #disk {
-  color: @peach;
+  /*color: @peach;*/
+  color: @mauve;
 }
 
 #temperature {

@@ -24,7 +24,7 @@
 	"disk": { // https://github.com/Alexays/Waybar/wiki/Module:-Disk
 		"interval": 60,
 		"format": "󰋊 {free}",
-		"path": "/"
+		"path": "/home/renat"
 	},
 	"idle_inhibitor": { // https://github.com/Alexays/Waybar/wiki/Module:-Idle-Inhibitor
 		"format": "{icon}",
@@ -50,10 +50,10 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{icon}{capacity}%",
+		"format": "{icon} {capacity}%",
 		"format-alt": "{icon} {time}",
 		"format-plugged": " {capacity}%",
-		"format-full": "{icon}{capacity}%",
+		"format-full": "{icon} {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
         "format-icons": ["󱃍", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 	},
@@ -88,7 +88,7 @@
 		]
 	},
     "power-profiles-daemon": {
-      "format": "{icon}   {profile}",
+      "format": "{icon} {profile}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {

@@ -1,0 +1,9 @@
+{
+    "wireplumber": {
+        "format": "{volume}%",
+        "format-muted": "",
+        "on-click": "pwvucontrol",
+        "max-volume": 150,
+        "scroll-step": 0.1
+    }
+}

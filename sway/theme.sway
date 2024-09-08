@@ -8,16 +8,10 @@ gaps {
     outer 0
 }
 
-#class                    Border  Backgr. Text    Indic.  Child border
-# client.focused            #000000 #ffffff #000000 #00DA8E #000000
-# client.focused_inactive   #000000 #ffffff #000000 #484E50 #000000
-# client.unfocused          #000000 #ffffff #000000 #282828 #000000
-# client.urgent             #000000 #ffffff #000000 #FB4934 #000000
-
 # target                 title     bg    text   indicator  border
-client.focused           $lavender $base $text  $rosewater $lavender
+client.focused           $lavender $base $text  $rosewater $blue
 client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $crust
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base

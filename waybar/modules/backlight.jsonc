@@ -5,7 +5,7 @@
 		"tooltip": false,
 		"format": "{icon}",
 		"format-icons": [
-			"󰹐",
+			//"󰹐",
 			"󱩎",
 			"󱩏",
 			"󱩐",
@@ -20,7 +20,7 @@
 	},
 	"backlight/slider": {
 		// "device": "acpi_video1",
-		"min": 20,
+		"min": 1,
 		"max": 100,
 		"orientation": "horizontal",
 		"format": "{percent}% {icon}"

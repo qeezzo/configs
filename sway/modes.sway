@@ -1,44 +1,58 @@
 mode "resize" {
-  bindsym --to-code {
-    $left resize shrink width 10px
-      $down resize grow height 10px
-      $up resize shrink height 10px
-      $right resize grow width 10px
+    bindsym --to-code {
+        $left resize shrink width 10px
+            $down resize grow height 10px
+            $up resize shrink height 10px
+            $right resize grow width 10px
 
-      # Ditto, with arrow keys
-      Left resize shrink width 10px
-      Down resize grow height 10px
-      Up resize shrink height 10px
-      Right resize grow width 10px
+            # Ditto, with arrow keys
+            Left resize shrink width 10px
+            Down resize grow height 10px
+            Up resize shrink height 10px
+            Right resize grow width 10px
 
-      # Return to default mode
-      Return mode "default"
-      Escape mode "default"
-  }
+            # Return to default mode
+            Return mode "default"
+            Escape mode "default"
+    }
 }
 
 mode $layout_mode {
-  bindsym --to-code {
-    d layout stacking     ; mode "default"
-    t layout tabbed       ; mode "default"
-    s layout toggle split ; mode "default"
-    v layout splitv       ; mode "default"
-    h layout splith       ; mode "default"
+    bindsym --to-code {
+        d layout stacking     ; mode "default"
+            t layout tabbed       ; mode "default"
+            s layout toggle split ; mode "default"
+            v layout splitv       ; mode "default"
+            h layout splith       ; mode "default"
 
-    Return mode "default"
-    Escape mode "default"
-  }
+            Return mode "default"
+            Escape mode "default"
+    }
 }
 
-mode $power_mode {
-  bindsym --to-code {
-    F2 exec $screen_off;        mode "default"
-    F3 exec swaylock -c 000000; mode "default"
-    F4 exec --no-startup-id systemctl -i suspend
-    F5 exec --no-startup-id systemctl -i reboot
-    F6 exec --no-startup-id systemctl -i poweroff
-
-    Return mode "default"
-    Escape mode "default"
-  }
+bindsym $mod+w mode "swap"
+mode "swap" {
+    bindsym {
+        h mark swap, workspace prev_on_output, swap container with mark swap
+        l mark swap, workspace next_on_output, swap container with mark swap
+        Escape mode "default"
+    }
 }
+
+mode normal {
+
+}
+
+mode insert {
+
+}
+
+mode visual {
+
+}
+
+mode command {
+
+}
+
+

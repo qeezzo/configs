@@ -1,26 +1,32 @@
 set {
-# General
+    # General
     $mod Mod4
     $left h
     $down j
     $up k
     $right l
 
-# Modes 
+    # Modes 
     $layout_mode "(d) Stacking | (t) Tabbed | (s) Split | (v) Vertical | (h) Horizontal"
-    $power_mode  "(F2) Screen Off | (F3) Lock | (F4) Suspend | (F5) Reboot | (F6) Power Off"
 
-# Preferences
+    # Preferences
     $font Hack Nerd Font Mono 16
     $theme dark
 
-# Apps
+    # Apps
     $term foot
     $browser firefox
     $menu fuzzel --list-executables-in-path --log-level=none | xargs swaymsg exec --
-    $input fuzzel --log-level=none --config ~/.config/fuzzel/vim-cmd.ini --dmenu --prompt "(num:name)> "
 
-# Scripts
+    $parse_ws_names ~/.config/sway/parse_ws_names.py
+
+    # $input fuzzel --log-level=none -c ~/.config/fuzzel/vim-cmd.ini --dmenu
+    $input fuzzel --log-level=none --dmenu
+    $input-rename $input --prompt "(num:name)> "
+    $input-workspace swaymsg -t get_workspaces | python $parse_ws_names | $input
+    $input-workspace swaymsg -t get_workspaces | python $parse_ws_names | $input
+
+    # Scripts
     $screen_off ~/.config/.local/bin/screen_off.sh
     $lock ~/.config/.local/bin/lock.sh
     $idle ~/.config/.local/bin/idle.sh
@@ -38,8 +44,8 @@ include normal-mode.sway
 include output.sway
 
 exec_always {
-# link file to wob input; wob - wayland overlay bar
-# rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob/backlight.ini & disown
+    # link file to wob input; wob - wayland overlay bar
+    # rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob/backlight.ini & disown
     i3-focus-last server
     rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob & disown
 
@@ -56,12 +62,18 @@ seat {
 }
 
 exec {
-# gammastep - screen's temperature
+    # gammastep - screen's temperature
     gammastep -PO 4200
     wl-paste --watch cliphist store
-    diskie &
+
+    udiskie --smart-tray --file-manager thunar &
     nm-applet &
+    blueman-applet &
+    telegram-desktop &
+    crow &
 }
+
+show_marks yes
 
 
 # Drag floating windows by holding down $mod and left mouse button.
@@ -72,10 +84,14 @@ floating_modifier $mod normal
 for_window [app_id="float"] floating enable
 for_window [title="float"] floating enable
 for_window [app_id="io.crow_translate.CrowTranslate"] floating enable
+for_window [app_id="com.vixalien.sticky"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [title="Avalonia DevTools"] floating enable
-for_window [app_id="thunar"] floating enable
+for_window [app_id="[Tt]hunar"] floating enable
+for_window [app_id="[Xx]archiver"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="Spotify"] title_format "SPOTIFY - %title"
 
 include /etc/sway/config.d/*

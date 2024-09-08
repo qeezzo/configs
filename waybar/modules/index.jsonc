@@ -6,6 +6,7 @@
 		"~/.config/waybar/modules/custom.jsonc",
 		"~/.config/waybar/modules/system.jsonc",
 		"~/.config/waybar/modules/backlight.jsonc",
-		"~/.config/waybar/modules/pulseaudio.jsonc"
+		"~/.config/waybar/modules/pulseaudio.jsonc",
+		"~/.config/waybar/modules/wireplumber.jsonc"
 	]
 }

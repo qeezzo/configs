@@ -1,22 +1,29 @@
 {
     "custom/quit": {
-        "format": "󰗼",
+        //"format": "󰗼",
+        // "format": "\udb82\ude48",
+        "format": "\uf426",
+        "format": "\uf08b",
         "tooltip": false,
         "on-click": "swaymsg exit"
     },
     "custom/suspend": {
         // "format": "󰍁",
-        "format": "󰒲",
+        // "format": "󰒲",
+        "format": "\udb82\udd04",
         "tooltip": false,
         "on-click": "zenity --question --text 'Suspend?' --title Confirmation && systemctl suspend"
     },
     "custom/reboot": {
-        "format": "󰜉",
+        // "format": "󰜉",
+        "format": "\udb81\udc50",
+        "format": "\uf021",
         "tooltip": false,
         "on-click": "zenity --question --text 'Reboot?' --title Confirmation && systemctl reboot"
     },
     "custom/power": {
         "format": "",
+        "format": "\u23fb", // bolder
         "tooltip": false,
         "on-click": "zenity --question --text 'Power off?' --title Confirmation && systemctl poweroff"
     }
