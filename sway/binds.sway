@@ -101,6 +101,12 @@ bindsym --to-code {
     $mod+Shift+9 move container to workspace number 9
     $mod+Shift+0 move container to workspace number 10
 
+    # Swap with id
+    # $mod+v swap container with id 
+
+    # Toggle stickness
+    $mod+Shift+s sticky toggle
+
     # Split toggle
     $mod+v splitt
 

@@ -172,8 +172,17 @@ lspconfig["pyright"].setup({
     on_attach = on_attach,
 })
 
-
 lspconfig["mesonlsp"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
+lspconfig["emmet_language_server"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
+lspconfig["cssls"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })

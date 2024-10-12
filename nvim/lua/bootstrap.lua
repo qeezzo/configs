@@ -22,5 +22,6 @@ end
 bootstrap_paq {
 	"savq/paq-nvim",
     "sainnhe/sonokai",
+    "nyoom-engineering/oxocarbon.nvim",
 	-- List your packages
 }

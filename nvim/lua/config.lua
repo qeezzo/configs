@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 
 -- options
+vim.o.termguicolors = true
 vim.o.exrc = true
 vim.o.autochdir = true
 vim.o.scrolloff = 5
@@ -30,6 +31,7 @@ vim.opt.fillchars = {fold = " "}
 vim.filetype.add({extension = { sway = 'swayconfig' }})
 vim.filetype.add({extension = { axaml = 'xml' }})
 vim.filetype.add({extension = { jsonc = 'json' }})
+vim.filetype.add({extension = { ixx = 'cpp' }})
 
 -- colorcsheme
 vim.cmd.colorscheme('sonokai')

@@ -4,6 +4,10 @@ require 'paq' {
 
     -- colorscheme
     'sainnhe/sonokai',
+    'uloco/bluloco.nvim',
+        -- requires
+        'rktjmp/lush.nvim',
+    'norcalli/nvim-colorizer.lua',
 
     -- treesitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
@@ -25,6 +29,7 @@ require 'paq' {
 
     -- side bar
     'nvim-tree/nvim-tree.lua',
+    'nvim-tree/nvim-web-devicons',
 
     -- helpers
     'm4xshen/autoclose.nvim',
