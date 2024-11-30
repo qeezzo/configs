@@ -4,6 +4,10 @@
   background-color: #6033ff;
 }
 
+#language {
+  color: @pink;
+}
+
 #workspaces button {
   color: #fff;
   padding: 0 5px;
