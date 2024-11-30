@@ -39,9 +39,11 @@ include modes.sway
 include theme.sway
 include bar.sway
 include normal-mode.sway
+include mouse.sway
 
 # different for host
 include output.sway
+include outputs
 
 exec_always {
     # link file to wob input; wob - wayland overlay bar
@@ -66,7 +68,8 @@ exec {
     gammastep -PO 4200
     wl-paste --watch cliphist store
 
-    udiskie --smart-tray --file-manager thunar &
+    avizo-service &
+    udiskie --smart-tray --file-manager nautilus &
     nm-applet &
     blueman-applet &
     telegram-desktop &
@@ -83,9 +86,13 @@ floating_modifier $mod normal
 # For windows
 for_window [app_id="float"] floating enable
 for_window [title="float"] floating enable
+for_window [class="float"] floating enable
 for_window [app_id="io.crow_translate.CrowTranslate"] floating enable
 for_window [app_id="com.vixalien.sticky"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="pwvucontrol"] floating enable
+for_window [app_id="nwg-displays"] floating enable
+for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [title="Avalonia DevTools"] floating enable

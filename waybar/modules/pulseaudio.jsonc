@@ -5,7 +5,7 @@
 		"orientation": "horizontal"
 	},
 	"pulseaudio": {
-		"on-click": "pavucontrol",
+		"on-click": "pwvucontrol",
 		"format": "{icon}{format_source}",
 		"format-bluetooth": "{icon} {format_source}",
 		"format-bluetooth-muted": "󰝟 {icon} {format_source}",

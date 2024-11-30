@@ -1,13 +1,13 @@
 /* https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#style */
 
 #mode {
-    background-color: #6033ff;
+  background-color: #6033ff;
 }
 
 #workspaces button {
   color: #fff;
   padding: 0 5px;
-  background-color: black;
+  background-color: #000;
   box-shadow: inset 0 -3px transparent;
 }
 
@@ -16,7 +16,8 @@
 }
 
 #workspaces button:hover {
-  box-shadow: inset 0 -3px #fff;
+  color: #000;
+  /* box-shadow: inset 0 -3px #555; */
 }
 
 #workspaces button.urgent {

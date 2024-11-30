@@ -18,6 +18,8 @@ conform.setup({
 		c = { "clang-format" },
 
 		rs = { "rustfmt" },
+
+        python = { "blue" },
 	},
 })
 

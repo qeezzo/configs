@@ -12,7 +12,7 @@ bindsym --to-code {
     $mod+minus scratchpad show
 
     # open notes
-    $mod+o exec flatpak run com.vixalien.sticky
+    $mod+o exec sticky-notes
 
     # Start a terminal
     $mod+Return exec $term
@@ -24,7 +24,7 @@ bindsym --to-code {
     $mod+d exec $menu
 
     # thunar, file explorer
-    $mod+e exec thunar
+    $mod+e exec nautilus
 
     # Reload the configuration file
     $mod+Shift+c reload
@@ -57,7 +57,7 @@ bindsym --to-code {
     $mod+Shift+r exec swaymsg rename workspace to $($input-rename)
 
     # move to named container
-    $mod+Shift+m exec swaymsg workspace $($input-workspace)
+    # $mod+Shift+m exec swaymsg workspace $($input-workspace)
 
     # move workspace to outputs
     $mod+Shift+Control+h move workspace to output left
@@ -123,19 +123,19 @@ bindsym --to-code {
     $mod+a focus parent
 
     # Player control, spotify
-    XF86AudioNext         exec playerctl --player=spotify next
-    XF86AudioPrev         exec playerctl --player=spotify previous
-    XF86AudioPlay         exec playerctl --player=spotify play-pause
+    # XF86AudioNext         exec playerctl --player=spotify next
+    # XF86AudioPrev         exec playerctl --player=spotify previous
+    # XF86AudioPlay         exec playerctl --player=spotify play-pause
 
     # Backlight, light
-    XF86MonBrightnessUp   exec light -A 5 && echo "$(light -G)/1" | bc > $WOBSOCK
-    XF86MonBrightnessDown exec light -U 5 && echo "$(light -G)/1" | bc > $WOBSOCK
+    # XF86MonBrightnessUp   exec light -A 5 && echo "$(light -G)/1" | bc > $WOBSOCK
+    # XF86MonBrightnessDown exec light -U 5 && echo "$(light -G)/1" | bc > $WOBSOCK
 
     # Volume, pamixer
-    XF86AudioMute         exec pamixer -t
-    XF86AudioMicMute      exec pamixer --default-source -t
-    XF86AudioRaiseVolume  exec pamixer -i 5 && pamixer --get-volume > $WOBSOCK
-    XF86AudioLowerVolume  exec pamixer -d 5 && pamixer --get-volume > $WOBSOCK
+    # XF86AudioMute         exec pamixer -t
+    # XF86AudioMicMute      exec pamixer --default-source -t
+    # XF86AudioRaiseVolume  exec pamixer -i 5 && pamixer --get-volume > $WOBSOCK
+    # XF86AudioLowerVolume  exec pamixer -d 5 && pamixer --get-volume > $WOBSOCK
 
     # PowerOff, Power menu
     XF86PowerOff          exec ~/.config/.local/bin/power_menu.sh
@@ -153,14 +153,25 @@ bindsym --to-code {
     Shift+Print   exec grimshot --cursor --wait 3 save anything - | swappy -f - -o - | wl-copy
     $mod+Shift+p  exec grimshot --cursor --wait 3 save anything - | swappy -f - -o - | wl-copy
 
+    # annotate
+    $mod+Shift+a  exec grimshot save output - | satty --fullscreen --filename -
 
     # Crow translate
     $mod+t exec qdbus io.crow_translate.CrowTranslate /io/crow_translate/CrowTranslate/MainWindow translateSelection
 
+    XF86AudioRaiseVolume exec volumectl -u up
+    XF86AudioLowerVolume exec volumectl -u down
+    XF86AudioMute exec volumectl toggle-mute
+    XF86AudioMicMute exec volumectl -m toggle-mute
+
+    XF86MonBrightnessUp exec lightctl up
+    XF86MonBrightnessDown exec lightctl down
 
     # Modes
     $mod+r mode "resize"
     $mod+s mode $layout_mode
+    $mod+Shift+m mode "mouse"
+
     # $mod+n mode "normal"
     # $mod+F2 mode $power_mode
 }

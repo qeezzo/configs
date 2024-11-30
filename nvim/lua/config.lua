@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 -- options
 vim.o.termguicolors = true
 vim.o.exrc = true
-vim.o.autochdir = true
+vim.o.autochdir = false
 vim.o.scrolloff = 5
 vim.o.showcmd = true
 vim.o.splitbelow = true

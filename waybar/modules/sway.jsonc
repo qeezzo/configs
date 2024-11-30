@@ -3,6 +3,11 @@
         "format": "<span style='italic'>{app_id}</span>",
         "icon": true
     },
+    "sway/language": {
+        "format": "{}",
+        "tooltip-format": "{flag}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    },
     "sway/scratchpad": {
         "format": "󰖲 {count}",
         "show-empty": false,

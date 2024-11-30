@@ -2,12 +2,14 @@ require 'paq' {
     -- auto management
     'savq/paq-nvim',
 
-    -- colorscheme
+    -- theme
     'sainnhe/sonokai',
     'uloco/bluloco.nvim',
         -- requires
         'rktjmp/lush.nvim',
     'norcalli/nvim-colorizer.lua',
+    'sphamba/smear-cursor.nvim',
+    'tamton-aquib/duck.nvim',
 
     -- treesitter
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
@@ -35,6 +37,9 @@ require 'paq' {
     'm4xshen/autoclose.nvim',
     'tpope/vim-commentary',
     'tpope/vim-surround',
+
+    -- dev container
+    'esensar/nvim-dev-container',
 }
 
 -- require all modules in the 'lua/plugins' directory

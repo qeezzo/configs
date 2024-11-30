@@ -1,0 +1,60 @@
+mode "mouse" {
+    # Movement: Arrow keys + Diagonals
+    bindsym h exec ydotool mousemove -10 0               # Move left
+    bindsym l exec ydotool mousemove 10 0               # Move right
+    bindsym k exec ydotool mousemove 0 -10              # Move up
+    bindsym j exec ydotool mousemove 0 10               # Move down
+
+    # Diagonal movement
+    bindsym h+k exec ydotool mousemove -- -10 -10          # Up-left
+    bindsym h+j exec ydotool mousemove -- -10 10           # Down-left
+    bindsym l+k exec ydotool mousemove -- 10 -10           # Up-right
+    bindsym l+j exec ydotool mousemove -- 10 10            # Down-right
+
+    # Fast movement with Shift
+    bindsym Shift+h exec ydotool mousemove -- -50 0        # Fast left
+    bindsym Shift+l exec ydotool mousemove -- 50 0         # Fast right
+    bindsym Shift+k exec ydotool mousemove -- 0 -50        # Fast up
+    bindsym Shift+j exec ydotool mousemove -- 0 50         # Fast down
+
+    # Fast diagonal movement
+    bindsym Shift+h+k exec ydotool mousemove -- -50 -50    # Fast up-left
+    bindsym Shift+h+j exec ydotool mousemove -- -50 50     # Fast down-left
+    bindsym Shift+l+k exec ydotool mousemove -- 50 -50     # Fast up-right
+    bindsym Shift+l+j exec ydotool mousemove -- 50 50      # Fast down-right
+
+    # Mouse clicks
+    bindsym Return exec ydotool click 1                   # Left click
+    bindsym Space exec ydotool click 2                    # Middle click
+    bindsym BackSpace exec ydotool click 3                # Right click
+
+    # Scrolling
+    bindsym u exec ydotool click --repeat 1 4             # Scroll up
+    bindsym d exec ydotool click --repeat 1 5             # Scroll down
+
+    # Exit mouse mode
+    bindsym Escape mode "default"
+}
+
+
+# mode "mouse" {
+#     bindsym  --to-code  {
+#         $left  seat - cursor move -10  0
+#         $down  seat - cursor move  0  10
+#         $up    seat - cursor move  0 -10
+#         $right seat - cursor move  10  0
+
+#         $left+$up  seat - cursor move -10 -10
+
+#         Shift+$left  seat - cursor move  -50  0
+#         Shift+$down  seat - cursor move   0  50
+#         Shift+$up    seat - cursor move   0 -50
+#         Shift+$right seat - cursor move   50  0
+
+#         Return    seat - cursor press button1  # Left click
+#         Space     seat - cursor press button2  # Middle click
+#         BackSpace seat - cursor press button3  # Right click
+
+#         Escape mode "default"
+#     }
+# }

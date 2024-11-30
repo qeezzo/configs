@@ -12,16 +12,50 @@ local function bootstrap_paq(packages)
 	vim.cmd.packadd("paq-nvim")
 	local paq = require("paq")
 	if first_install then
-		vim.notify("Installing plugins... If prompted, hit Enter to continue.")
-        paq(packages)
-        paq.install()
+		vim.notify("Installing plugins...")
+		paq(packages)
+		paq.install()
+		print('hooray! bootstrapped :)')
+		vim.cmd('qa')
 	end
 end
 
 -- Call helper function
 bootstrap_paq {
-	"savq/paq-nvim",
-    "sainnhe/sonokai",
-    "nyoom-engineering/oxocarbon.nvim",
-	-- List your packages
+    -- auto management
+    'savq/paq-nvim',
+
+    -- colorscheme
+    'sainnhe/sonokai',
+    'uloco/bluloco.nvim',
+        -- requires
+        'rktjmp/lush.nvim',
+    'norcalli/nvim-colorizer.lua',
+
+    -- treesitter
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+
+    -- lsp
+    'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
+    'williamboman/mason-lspconfig.nvim',
+
+    -- completion
+    'hrsh7th/nvim-cmp',
+    'l3mon4d3/luasnip',
+
+    -- formatting
+    'stevearc/conform.nvim',
+
+    -- mason
+    'williamboman/mason.nvim',
+
+    -- side bar
+    'nvim-tree/nvim-tree.lua',
+    'nvim-tree/nvim-web-devicons',
+
+    -- helpers
+    'm4xshen/autoclose.nvim',
+    'tpope/vim-commentary',
+    'tpope/vim-surround',
 }

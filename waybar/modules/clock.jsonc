@@ -3,7 +3,7 @@
         "interval": 1,
 		"format": "{:%I:%M:%S}",
 		"format-alt": "{:L%A / %B / %d-%m-%Y / %I:%M:%S}",
-		"tooltip-format": "<big>{:L%Y %B}</big>\n<span size='10pt' font='Fira Code Nerd Font Mono'>{calendar}</span>",
+		"tooltip-format": "<big>{:L%Y %B}</big>\n<span size='16pt' font='Hack Nerd Font Mono'>{calendar}</span>",
 		"actions": {
 			"on-scroll-up": "shift_up",
 			"on-scroll-down": "shift_down",
@@ -17,10 +17,10 @@
 			"weeks-pos": "left",
 			"on-scroll": 1,
 			"format": {
-				"days": "<span color='#bac2de'><b>{}</b></span>",
-				"weeks": "<span color='#cba6f7'><b>{} | </b></span>",
-				"today": "<span color='#f38ba8'><b>{}</b></span>",
-				"months": "<span color='#89b4fa'><b>{}</b></span>",
+				"days":     "<span color='#bac2de'>{}</span>",
+				"weeks":    "<span color='#cba6f7'><b>{} | </b></span>",
+				"today":    "<span color='#f38ba8'><b>{}</b></span>",
+				"months":   "<span color='#89b4fa'><b>{}</b></span>",
 				"weekdays": "<span color='#fab387'><b>{}</b></span>"
 			}
 		}

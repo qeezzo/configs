@@ -7,6 +7,10 @@
 !/wob/
 !/.local/
 !/waybar/
+!/zathura/
+!/fish/
+!chromium-flags.conf
+!code-flags.conf
 
 !.gitignore
 !user-dirs.dirs

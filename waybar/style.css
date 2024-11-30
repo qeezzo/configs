@@ -16,7 +16,6 @@ window#waybar {
   border-radius: 0;
   font-size: 18px;
   font-family:
-    Hack,
     Hack Nerd Font Mono,
     "Font Awesome 6 Free";
 }
@@ -61,7 +60,7 @@ label {
 
 #clock {
   font-size: 24px;
-  font-family: Hack;
+  /* font-family: Hack; */
   color: #fff;
   /* color: @lavender; */
 }

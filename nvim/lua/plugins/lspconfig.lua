@@ -126,7 +126,7 @@ lspconfig["omnisharp"].setup({
     cmd = { "omnisharp" },
 })
 
-lspconfig["tsserver"].setup({
+lspconfig["ts_ls"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
@@ -144,20 +144,20 @@ lspconfig["dockerls"].setup({
 lspconfig["sqlls"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
-    settings = {
-        sqlLanguageServer = {
-            connections = {
-                {
-                      adapter = 'mysql',
-                      host = '[::]',
-                      user = 'renat',
-                      password = 'renatus',
-                      port = 3306,
-                      database = 'bank',
-                },
-            },
-        },
-    },
+    -- settings = {
+    --     sqlLanguageServer = {
+    --         connections = {
+    --             {
+    --                   adapter = 'mysql',
+    --                   host = '[::]',
+    --                   user = 'renat',
+    --                   password = 'renatus',
+    --                   port = 3306,
+    --                   database = 'bank',
+    --             },
+    --         },
+    --     },
+    -- },
     cmd = { "sql-language-server", "up", "--method", "stdio" },
 })
 
@@ -183,6 +183,11 @@ lspconfig["emmet_language_server"].setup({
 })
 
 lspconfig["cssls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
+lspconfig["bashls"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })

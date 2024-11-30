@@ -1,24 +1,17 @@
-#custom-power {
-  font-size: 32px;
-  background: #db395f;
-  color: black;
-  padding: 0 10px;
-}
-#custom-suspend {
-  font-size: 32px;
-  background: #db395f;
-  color: black;
-  padding: 0 10px;
-}
-#custom-reboot {
-  font-size: 32px;
-  background: #db395f;
-  color: black;
-  padding: 0 10px;
-}
+#custom-power,
+#custom-suspend,
+#custom-reboot,
 #custom-quit {
   font-size: 32px;
   background: #db395f;
   color: black;
   padding: 0 10px;
+  transition: color 0.3s;
+}
+
+#custom-power:hover,
+#custom-suspend:hover,
+#custom-reboot:hover,
+#custom-quit:hover {
+  color: white;
 }
